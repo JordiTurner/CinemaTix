@@ -2,7 +2,7 @@
 
 CinemaTix is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: 1 hours spent in total
+Time spent: 7 hours spent in total
 
 ## User Stories
 
@@ -15,27 +15,27 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
-- [ ] User sees an error message when there's a networking error.
-- [ ] Movies are displayed using a CollectionView instead of a TableView.
-- [ ] User can search for a movie.
-- [ ] All images fade in as they are loading.
-- [ ] Customize the UI.
+- [X] User sees an error message when there's a networking error.
+- [X] Movies are displayed using a CollectionView instead of a TableView.
+- [X] User can search for a movie.
+- [X] All images fade in as they are loading.
+- [X] Customize the UI.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+-[X] App has a logo
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/GyvWpQf.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I had difficulty having the searchbar filter not only the titles, but also the movie posters. 
 
 ## License
 

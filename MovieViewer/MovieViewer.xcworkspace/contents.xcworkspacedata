@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MovieViewer.xcodeproj">
+      location = "group:/Users/jorditurner/Documents/Classes/CodePath/CodePath-Proj1/MovieViewer/CinemaTix.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

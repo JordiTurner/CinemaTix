@@ -24,7 +24,7 @@ The following **optional** features are implemented:
 - [X] All images fade in as they are loading.
 - [X] Customize the UI.
 - [X] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
-- [ ] Customize the navigation bar.
+- [X] Customize the navigation bar.
 
 The following **additional** features are implemented:
 

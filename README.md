@@ -2,7 +2,7 @@
 
 CinemaTix is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: 9 hours spent in total
+Time spent: 10 hours spent in total
 
 ## User Stories
 
@@ -13,8 +13,8 @@ The following **required** functionality is complete:
 - [X] User sees a loading state while waiting for the movies API.
 - [X] User can pull to refresh the movie list.
 - [X] User can view movie details by tapping on a cell.
-- [ ] User can select from a tab bar for either **Now Playing** or **Top Rated** movies.
-- [ ] Customize the selection effect of the cell.
+- [X] User can select from a tab bar for either **Now Playing** or **Top Rated** movies.
+- [X] Customize the selection effect of the cell.
 
 The following **optional** features are implemented:
 
@@ -23,12 +23,13 @@ The following **optional** features are implemented:
 - [X] User can search for a movie.
 - [X] All images fade in as they are loading.
 - [X] Customize the UI.
-- [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
+- [X] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
 - [ ] Customize the navigation bar.
 
 The following **additional** features are implemented:
 
-- [X] App has a logo
+- [X] App has a logo.
+- [X] Changed the color of the status bar.
 
 ## Notes
 I had difficulty having the searchbar filter not only the titles, but also the movie posters.
@@ -36,20 +37,16 @@ I had difficulty having the searchbar filter not only the titles, but also the m
 ## Discussion
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. Navigation bar customization.
+2. APIs.
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/GyvWpQf.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/Vqv2ALp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
-## Notes
-
-Describe any challenges encountered while building the app.
 
 ## License
 

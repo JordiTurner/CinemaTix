@@ -36,15 +36,61 @@ class DetailViewController: UIViewController {
         overviewLabel.sizeToFit()
         
         if let posterPath = movie["poster_path"] as? String {
-            let baseUrl = "https://image.tmdb.org/t/p/w342"
-            let imageUrl = NSURL(string: baseUrl+posterPath)
-        posterImageView.setImageWithURL(imageUrl!)
-        }
+            let smallBaseUrl = "https://image.tmdb.org/t/p/w342"
+            let largeBaseUrl = "https://image.tmdb.org/t/p/original"
+            let smallImageUrl = NSURL(string: smallBaseUrl+posterPath)
+            let largeImageUrl = NSURL(string: largeBaseUrl+posterPath)
+            let smallImageRequest = NSURLRequest(URL: smallImageUrl!)
+            let largeImageRequest = NSURLRequest(URL: largeImageUrl!)
+                        posterImageView.setImageWithURLRequest(
+                smallImageRequest,
+                placeholderImage: nil,
+                success: { (smallImageRequest, smallImageResponse, smallImage) -> Void in
+                    
+                    // imageResponse will be nil if the image is cached
+                    if smallImageResponse != nil {
+                        self.posterImageView.alpha = 0.0
+                        self.posterImageView.image = smallImage
+                        UIView.animateWithDuration(0.3, animations: { () -> Void in
+                            self.posterImageView.alpha = 1.0
+                            }, completion: { (sucess) -> Void in
+                                // The AFNetworking ImageView Category only allows one request to be sent at a time
+                                // per ImageView. This code must be in the completion block.
+                                self.posterImageView.setImageWithURLRequest(
+                                    largeImageRequest,
+                                    placeholderImage: smallImage,
+                                    success: { (largeImageRequest, largeImageResponse, largeImage) -> Void in
+                                        self.posterImageView.image = largeImage;
+                                    },
+                                    failure: { (request, response, error) -> Void in
+                                        self.posterImageView.image = UIImage(named: "error")
+                                        
+                                })
+                        })} else {
+                        self.posterImageView.alpha = 0.0
+                        self.posterImageView.image = smallImage
+                        UIView.animateWithDuration(0.3, animations: { () -> Void in
+                            self.posterImageView.alpha = 1.0
+                            }, completion: { (sucess) -> Void in
+                                // The AFNetworking ImageView Category only allows one request to be sent at a time
+                                // per ImageView. This code must be in the completion block.
+                                self.posterImageView.setImageWithURLRequest(
+                                    largeImageRequest,
+                                    placeholderImage: smallImage,
+                                    success: { (largeImageRequest, largeImageResponse, largeImage) -> Void in
+                                        self.posterImageView.image = largeImage;
+                                    },
+                                    failure: { (request, response, error) -> Void in
+                                        self.posterImageView.image = UIImage(named: "error")
+                                        
+                                })
+                        })                    }
+                },
+                failure: { (imageRequest, imageResponse, error) -> Void in
+                    self.posterImageView.image = UIImage(named: "error")
+            })
 
-        
-        
-        
-        // Do any additional setup after loading the view.
+        }
     }
 
     override func didReceiveMemoryWarning() {
